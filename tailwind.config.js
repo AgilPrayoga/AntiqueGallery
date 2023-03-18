@@ -6,6 +6,7 @@ module.exports = {
     "./resources/views/login.blade.php",
     "./resources/views/signin.blade.php",
     "./resources/views/admin_dashboard.blade.php",
+    "./resources/views/showcase.blade.php",
   ],
   theme: {
     extend: {

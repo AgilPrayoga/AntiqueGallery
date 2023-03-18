@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="h-[100vh] bg-[#2C3333] flex justify-center items-center">
-    <form class="p-[60px] w-[600px] drop-shadow-xl z-0 bg-[#D9D9D9] font-montserrat flex rounded-[25px] justify-left items-left flex-col p-[50px]" method="POST"  action={{ route('sign_in_action') }}>
+    <form class="p-[60px] w-[600px] drop-shadow-xl z-0 bg-[#D9D9D9] font-montserrat flex rounded-[25px] justify-left items-left flex-col p-[50px]" method="POST"  action={{ route('sign_up_action') }}>
         @csrf
         <h1 class="m-[5px] text-[#2C3333] font-extrabold">Sign UP</h1>
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Username*</label>

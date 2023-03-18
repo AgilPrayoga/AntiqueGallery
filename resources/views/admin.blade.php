@@ -24,7 +24,6 @@
         <label class="text-[#2C3333] text-[18px] font-bold" for="">password*</label>
         <input class="p-[5px] rounded-lg drop-shadow-xl" type="password" placeholder="password" name="password">
         <p>{{session()->get('msg')}}</p>
-        <p>belum memiliki akun? <a href={{route('sign_in_form')}}>daftar sekarang!</a></p>
         <button class="text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
         focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
         " type="submit">Login</button>

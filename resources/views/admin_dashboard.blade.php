@@ -1,4 +1,4 @@
-@extends('isGuest')
+@extends('isLogin')
 
 @section('content')
 <div class="bg-[#F2F2F2]  h-[100vh] flex justify-center items-center " >

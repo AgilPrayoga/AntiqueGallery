@@ -30,10 +30,8 @@ Route::controller(UsersController::class)->group (function()
     {
     Route::get('/login','login_form')->name('login_form');
     Route::post('/login','login_action')->name('login_action');
-    Route::get('/showcase','showcase')->name('showcase');
-    Route::post('/logout','showcase_logout')->name('showcase_logout');
-    Route::get('/signin','sign_in_form')->name('sign_in_form');
-    Route::post('/signin','sign_in_action')->name('sign_in_action');
+    Route::get('/signup','sign_up_form')->name('sign_up_form');
+    Route::post('/signup','sign_up_action')->name('sign_up_action');
     
     }
 
@@ -50,5 +48,7 @@ Route::controller(MiminController::class)->group(function(){
 
 Route::controller(ItemsController::class)->group(function(){
     Route::post('/items', 'dashboard_action')->name('dashboard_action');
+    Route::get('/showcase','showcase')->name('showcase');
+    Route::post('/logout','showcase_logout')->name('showcase_logout');
     }
 );

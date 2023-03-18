@@ -23,7 +23,7 @@
     </div>
     <div class="bg-[#F2F2F2]  h-[100vh] flex justify-center items-center ">
         <div class="mr-[150px]">
-            
+            @csrf
             <h5 class="text-[#F0B974]  font-bold font-montserrat">Antique Gallery</h5>
             <h1 class="text-[#393E46] text-[60px] font-bold  font-montserrat">Terpercaya di <br>
                 Samarinda</h1>

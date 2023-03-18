@@ -54,46 +54,12 @@ class UsersController extends Controller
         
     }
 
-    public function showcase(){
-
-        //mengecek apakah terdapat token pada session
-        //pengecekan bertujuan agar user tidak bisa mengakses showcase sebelum login
-        
-        if(Session::get('token') == null){
-            return to_route('login_form')->with('error','Login terlebih dahulu!!');
-        }
-        if(Session::has('token')){
-            $users= Users::where('token',Session::get('token'))->first();
-            return view('showcase',[
-                "user"=>$users,
-                "db_token"=>$users->token
-                
-                
-                
-            ]);
-        }
-        else{
-            
-            //jika tidak terdapat token balik ke login page
-            return redirect()->back()->with('error','Login terlebih dahulu!!');
-        }
-    }
-    public function showcase_logout(Request $request)
+    public function sign_up_form()
     {
-        Users::where('token',$request->token)->update([
-            'token'=>null
-        ]);
-        Session::pull('token');
-        return to_route('login_form')->with('msg','anda telah logout');
-        
+        return view('signup');
     }
 
-    public function sign_in_form()
-    {
-        return view('signin');
-    }
-
-    public function sign_in_action(Request $request){
+    public function sign_up_action(Request $request){
         $request->validate([
             'username'=>['required','unique:Users','max : 30'],
             'email'=>['required'],
@@ -117,7 +83,7 @@ class UsersController extends Controller
             return to_route('login_form')->with('msg','akun berhasil di buat.');
         }
         else{
-            return view('signin')->with('msg','akun gagal di buat.!!');
+            return view('signup')->with('msg','akun gagal di buat.!!');
         }
     }
 }
