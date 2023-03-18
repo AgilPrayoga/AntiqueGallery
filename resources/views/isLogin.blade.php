@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>AntiqueGallery</title>
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     {{-- font --}}
@@ -19,7 +19,7 @@
     <nav class="z-40 fixed bg-[#2C3333] w-screen h-28 flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
         
         <a class="text-[#F0E9D2] m-[10px] font-bold font-montserrat no-underline" href={{ route('home') }}><h1>LOGO</h1></a>
-        <div>
+        <div class="flex flex-row items-center">
             <a class="text-[#F0E9D2] font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>Home</a>
             <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('showcase') }}>Product</a>
             <a class="text-[#F0E9D2]  font-thin mr-[100px] no-underline font-montserrat" href={{ route('home') }}>about</a>
