@@ -98,6 +98,7 @@ class UsersController extends Controller
             'username'=>['required','unique:Users','max : 30'],
             'email'=>['required'],
             'no_telp'=>['nullable'],
+            'admin'=>['require'],
             'password'=>['required','confirmed'],
             'password_confirmation'=>['required',]
         ]);
@@ -107,7 +108,8 @@ class UsersController extends Controller
             "username"=>$request->username,
             "email"=>$request->email,
             "no-telp"=>$request->no_telp,
-            "password"=>bcrypt($request->password)
+            "password"=>bcrypt($request->password),
+            "admin"=>false
 
 
         ]);

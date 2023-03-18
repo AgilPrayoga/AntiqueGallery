@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('No-telp')->nullable();
             $table->string('password');
             $table->string('token')->nullable();
+            $table->boolean('admin')->default(0);
             $table->timestamps();
         });
     }

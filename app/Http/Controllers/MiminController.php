@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Items;
-use App\Models\Mimin;
+use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -22,7 +22,7 @@ class MiminController extends Controller
     {
         
         //validasi login mengecek username
-       $users = Mimin::where('username',$request->username)->first();
+       $users = Users::where('username',$request->username)->first();
         if($users == null){
             //jika tidak terdapat username maka kembalikan ke login page
             return redirect()->back()->with('error','username/password salah!');
@@ -32,9 +32,8 @@ class MiminController extends Controller
         //password yang dicek menggunakan hash karena password yang ada di dalam database telah di encrypsi
         $db_password=$users->password;
         $hashed_password =Hash::check($request->password,$db_password);
-        
-
-        if ($hashed_password){
+        if ($users->admin == 1){
+            if ($hashed_password){
             
             //jika password terdapat didatabase maka buat token 
             $users->token =Str::random(20);
@@ -51,7 +50,12 @@ class MiminController extends Controller
             return redirect()->back()->with('error','Username atau password tidak di temukan!');
         }
         
-    }
+            }else{
+                return redirect()->back()->with('error','Anda bukan admin!');
+            }
+        }
+
+        
     public function admin_dashboard()
     {
         //mengecek apakah terdapat token pada session
@@ -61,7 +65,7 @@ class MiminController extends Controller
             return to_route('login_admin_form')->with('error','Login terlebih dahulu!!');
         }
         if(Session::has('token')){
-            $mimin= Mimin::where('token',Session::get('token'))->first();
+            $mimin= Users::where('token',Session::get('token'))->first();
             $items = Items::get();
         
             return view('admin_dashboard',[
@@ -81,7 +85,7 @@ class MiminController extends Controller
     }
     public function admin_logout(Request $request)
     {
-        Mimin::where('token',$request->token)->update([
+        Users::where('token',$request->token)->update([
             'token'=>null
         ]);
         Session::pull('token');

@@ -17,10 +17,11 @@ class UsersFactory extends Factory
     public function definition(): array
     {
         return [
-            'username'=>'agil',
+            'username'=>'admin',
             'email'=>'ariagilprayoga@gmail.com',
             'no-telp'=>'08225095323',
-            'password'=>bcrypt('123')
+            'password'=>bcrypt('123'),
+            'admin'=>1
             
         ];
     }
