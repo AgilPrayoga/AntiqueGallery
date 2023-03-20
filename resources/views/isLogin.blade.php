@@ -16,7 +16,7 @@
     {{-- endfont --}}
 </head>
 <body>
-    <nav class="z-40 fixed bg-[#2C3333] w-screen h-28 flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
+    <nav class="z-40 fixed bg-[#2C3333] w-screen h-28 flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2] lg:h-24">
         
         <a class="text-[#F0E9D2] m-[10px] font-bold font-montserrat no-underline" href={{ route('home') }}><h1>LOGO</h1></a>
         <div class="flex flex-row items-center">

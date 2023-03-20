@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::lrauF2eE9NZ7vRxJ',
+            '_route' => 'generated::ZwxtlHsWTW0DCgZN',
           ),
           1 => NULL,
           2 => 
@@ -380,6 +380,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/linkstorage' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::LyOZ6WbMhGghFW2C',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
@@ -537,7 +557,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::lrauF2eE9NZ7vRxJ' => 
+    'generated::ZwxtlHsWTW0DCgZN' => 
     array (
       'methods' => 
       array (
@@ -560,7 +580,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::lrauF2eE9NZ7vRxJ',
+        'as' => 'generated::ZwxtlHsWTW0DCgZN',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1072,6 +1092,44 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'edit_action',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::LyOZ6WbMhGghFW2C' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'linkstorage',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:123:"function () {
+        \\Illuminate\\Support\\Facades\\Artisan::call(\'storage:link\'); // this will do the command line job
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004f00000000000000000";}}',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::LyOZ6WbMhGghFW2C',
       ),
       'fallback' => false,
       'defaults' => 

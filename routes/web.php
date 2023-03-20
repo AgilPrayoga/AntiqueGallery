@@ -5,6 +5,7 @@ use App\Http\Controllers\MiminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OuterController;
 use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Artisan;
 use PhpParser\Node\Expr\FuncCall;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -50,7 +51,10 @@ Route::controller(MiminController::class)->group(function(){
 
 
     }
+    
 
 );
-
+Route::get('/linkstorage', function () {
+        Artisan::call('storage:link'); // this will do the command line job
+    });
 
