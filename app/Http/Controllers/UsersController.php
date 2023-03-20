@@ -86,4 +86,16 @@ class UsersController extends Controller
             return view('signup')->with('msg','akun gagal di buat.!!');
         }
     }
+    public function logout(Request $request)
+    {
+        Users::where('token',$request->token)->update([
+            'token'=>null,
+            'admintkn'=>null
+        ]);
+        
+        Session::pull('token','admintkn');
+        
+        return to_route('login_form')->with('msg','anda telah logout');
+        
+    }
 }

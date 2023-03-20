@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1C8yCuqL0GVFf9Yv',
+            '_route' => 'generated::lrauF2eE9NZ7vRxJ',
           ),
           1 => NULL,
           2 => 
@@ -208,6 +208,25 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/logout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'logout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin' => 
       array (
         0 => 
@@ -264,25 +283,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/adminlogout' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin_logout',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/items' => 
       array (
         0 => 
@@ -322,13 +322,52 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/logout' => 
+      '/delete' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'showcase_logout',
+            '_route' => 'item_delete',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/editform' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'edit_form',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/edit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'edit_action',
           ),
           1 => NULL,
           2 => 
@@ -498,7 +537,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::1C8yCuqL0GVFf9Yv' => 
+    'generated::lrauF2eE9NZ7vRxJ' => 
     array (
       'methods' => 
       array (
@@ -521,7 +560,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::1C8yCuqL0GVFf9Yv',
+        'as' => 'generated::lrauF2eE9NZ7vRxJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -720,6 +759,42 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'logout' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'logout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UsersController@logout',
+        'controller' => 'App\\Http\\Controllers\\UsersController@logout',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'logout',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login_admin_form' => 
     array (
       'methods' => 
@@ -830,42 +905,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin_logout' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'adminlogout',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\MiminController@admin_logout',
-        'controller' => 'App\\Http\\Controllers\\MiminController@admin_logout',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'admin_logout',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'dashboard_action' => 
     array (
       'methods' => 
@@ -879,8 +918,8 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\ItemsController@dashboard_action',
-        'controller' => 'App\\Http\\Controllers\\ItemsController@dashboard_action',
+        'uses' => 'App\\Http\\Controllers\\MiminController@dashboard_action',
+        'controller' => 'App\\Http\\Controllers\\MiminController@dashboard_action',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -916,8 +955,8 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\ItemsController@showcase',
-        'controller' => 'App\\Http\\Controllers\\ItemsController@showcase',
+        'uses' => 'App\\Http\\Controllers\\MiminController@showcase',
+        'controller' => 'App\\Http\\Controllers\\MiminController@showcase',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -939,27 +978,100 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'showcase_logout' => 
+    'item_delete' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'logout',
+      'uri' => 'delete',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\ItemsController@showcase_logout',
-        'controller' => 'App\\Http\\Controllers\\ItemsController@showcase_logout',
+        'uses' => 'App\\Http\\Controllers\\MiminController@item_delete',
+        'controller' => 'App\\Http\\Controllers\\MiminController@item_delete',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'showcase_logout',
+        'as' => 'item_delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'edit_form' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'editform',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\MiminController@edit_form',
+        'controller' => 'App\\Http\\Controllers\\MiminController@edit_form',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'edit_form',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'edit_action' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\MiminController@edit_action',
+        'controller' => 'App\\Http\\Controllers\\MiminController@edit_action',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'edit_action',
       ),
       'fallback' => false,
       'defaults' => 

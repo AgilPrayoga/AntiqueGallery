@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <div class="h-[100vh] bg-[#2C3333] flex justify-center items-center">
     <form class="p-[60px] w-[600px] drop-shadow-xl z-0 bg-[#D9D9D9] font-montserrat flex rounded-[25px] justify-left items-left flex-col p-[50px]" method="POST"  action=<?php echo e(route('sign_up_action')); ?>>

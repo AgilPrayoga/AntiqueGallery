@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <div>
     <h1>Admin</h1>

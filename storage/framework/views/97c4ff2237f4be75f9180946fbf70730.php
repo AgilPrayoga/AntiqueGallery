@@ -24,7 +24,7 @@
             <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href=<?php echo e(route('showcase')); ?>>Product</a>
             <a class="text-[#F0E9D2]  font-thin mr-[100px] no-underline font-montserrat" href=<?php echo e(route('home')); ?>>about</a>
             
-            <form method="POST" action=<?php echo e(route('showcase_logout')); ?>>
+            <form method="POST" action=<?php echo e(route('logout')); ?>>
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="token" value=<?php echo e($db_token); ?>>
                 <button class="text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 

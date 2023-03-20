@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <a href="">
     <div class="h-[auto] p-[150px] bg-[#D9D9D9] drop-shadow-lg flex  flex-wrap  justify-center ">

@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <div class="h-[100vh] bg-[#2C3333] flex justify-center items-center">
     <?php echo csrf_field(); ?>

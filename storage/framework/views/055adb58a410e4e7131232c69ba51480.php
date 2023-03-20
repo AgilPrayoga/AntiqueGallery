@@ -1,18 +1,15 @@
-
-
 <?php $__env->startSection('content'); ?>
 <div class="bg-[#F2F2F2]  h-[100vh] flex justify-center items-center " >
    
-    <form method="POST" action=<?php echo e(route('admin_logout')); ?>>
+    <form method="POST" action=<?php echo e(route('logout')); ?>>
         <?php echo csrf_field(); ?>
         <h1>Hallo Admin</h1>
         <input type="hidden" name="token" value=<?php echo e($db_token); ?>>
-        
+        <i><?php echo e(session()->get('msg')); ?></i>
         <button>Logout </button>
 
     </form>
 </div>
-    
 <div class=" bg-[#2C3333]  h-[100vh] flex justify-center items-center ">
         <form class="drop-shadow-xl z-0 bg-[#D9D9D9] font-montserrat flex rounded-[20px] justify-left items-left flex-col p-[50px]" method="POST" enctype="multipart/form-data" action=<?php echo e(route('dashboard_action')); ?>>
                 <?php echo csrf_field(); ?>
@@ -28,7 +25,6 @@
                 <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="file" placeholder="image" name="image">
                 <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Description</label>
                 <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="description" name="description">
-                <i><?php echo e(session()->get('msg')); ?></i>
                 <button class="m-[5px] text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
                 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
                 " type="submit">submit</button>
@@ -60,16 +56,24 @@
                 <td><?php echo e($item->quantity); ?></td>
                 <td><?php echo e($item->description); ?></td>
                 <td><?php echo e($item->tag); ?></td>
+                
+
                 <td>
                     <div>
-                        <form method="post" action="">
-                            <input type="hidden" value="<?php echo e($item->id); ?>">
+                        
+                        <form method="post" action=<?php echo e(route('item_delete')); ?>>
+                            <?php echo csrf_field(); ?>
+                            <input type="hidden" name="id" value=<?php echo e($item->id); ?>>
                             <button type="submit">Delete</button>
                         </form>
-                        <form method="post" action="">
-                            <input type="hidden" value="<?php echo e($item->id); ?>">
+                        
+                        <form method="get" action=<?php echo e(route('edit_form')); ?>>
+                            <?php echo csrf_field(); ?>
+                            <input type="hidden" name="id" value=<?php echo e($item->id); ?>>
                             <button type="submit">Edit</button>
                         </form>
+                        
+                        
                     </div>
                 </td>
             </tr>
@@ -78,6 +82,7 @@
         </table>
                 
         </div>
+    
 
 
 

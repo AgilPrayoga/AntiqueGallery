@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 <div>
     <div class=" bg-[#2C3333]  h-[100vh] flex justify-center items-center ">

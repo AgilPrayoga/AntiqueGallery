@@ -32,7 +32,7 @@ Route::controller(UsersController::class)->group (function()
     Route::post('/login','login_action')->name('login_action');
     Route::get('/signup','sign_up_form')->name('sign_up_form');
     Route::post('/signup','sign_up_action')->name('sign_up_action');
-    
+    Route::post('/logout','logout')->name('logout');
     }
 
 );
@@ -41,14 +41,16 @@ Route::controller(MiminController::class)->group(function(){
     Route::get('/admin','login_admin_form')->name('login_admin_form');
     Route::post('/admin','admin_action')->name('admin_action');
     Route::get('/dashboard','admin_dashboard')->name('admin_dashboard');
-    Route::post('/adminlogout','admin_logout')->name('admin_logout');
-    }
-
-);
-
-Route::controller(ItemsController::class)->group(function(){
     Route::post('/items', 'dashboard_action')->name('dashboard_action');
     Route::get('/showcase','showcase')->name('showcase');
-    Route::post('/logout','showcase_logout')->name('showcase_logout');
+    Route::post('/delete','item_delete')->name('item_delete');
+    Route::get('/editform','edit_form')->name('edit_form');
+    Route::post('/edit','edit_action')->name('edit_action');
+    
+
+
     }
+
 );
+
+

@@ -24,7 +24,7 @@
             <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('showcase') }}>Product</a>
             <a class="text-[#F0E9D2]  font-thin mr-[100px] no-underline font-montserrat" href={{ route('home') }}>about</a>
             
-            <form method="POST" action={{ route('showcase_logout') }}>
+            <form method="POST" action={{ route('logout') }}>
                 @csrf
                 <input type="hidden" name="token" value={{$db_token}}>
                 <button class="text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
