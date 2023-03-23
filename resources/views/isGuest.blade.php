@@ -16,14 +16,17 @@
     {{-- endfont --}}
 </head>
 <body>
-    <nav class="z-40 fixed bg-[#2C3333] w-screen h-28 lg:h-24  flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
+    <nav class="z-40 fixed bg-[#2C3333] w-screen xl:h-28 lg:h-24  flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
         
         <a class="text-[#F0E9D2] m-[10px] font-bold font-montserrat no-underline" href={{ route('home') }}><h1>LOGO</h1></a>
-        <div>
+        <div class="flex justify-row items-center">
             <a class="text-[#F0E9D2] font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>Home</a>
             <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('showcase') }}>Product</a>
-            <a class="text-[#F0E9D2]  font-thin mr-[100px] no-underline font-montserrat" href={{ route('home') }}>about</a>
+            <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>about</a>
+             <img  class="mr-[100px] w-[30px] h-[30px]" src={{ asset("storage/images/profile.png") }} alt="">
         </div>
+        
+       
         
     </nav>
     {{-- content --}}
@@ -34,7 +37,7 @@
     <footer class="bg-[#2C3333] p-[30px] border-t-2 border-[#F0E9D2]  flex flex-grid justify-between items-center justify-row">
         <div class="ml-[100px]">
             <h4 class="text-[#F0E9D2]">Hubungi</h4>
-            <h6 class="text-[#F0E9D2]">Kelompok 4<br>
+            <h6 class="text-[#F0E9D2]">Agil Prayoga<br>
             JL.Rukun Mangkupalas Samarinda Seberang,<br>
             samarinda,Kalimantan Timur, Indonesia
             </h6></div>
@@ -60,7 +63,7 @@
         
 
     </footer>
-    <div class="bg-[#eaeaea]" >&copy; Ari Agil Prayoga |terbaik sejak masih sperma.</div>
+    <div class="bg-[#eaeaea]" >&copy; DiCOde|Terbaik sejak doeloe.</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
 </body>

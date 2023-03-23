@@ -3,11 +3,11 @@
 @section('content')
 <div>
     <div class=" bg-[#2C3333]  h-[100vh] flex justify-center items-center ">
-        <img class=" h-[500px] w-[500px] mr-[100px] lg:mr-[20px] lg:h-[300px] lg:w-[300px] " src={{ asset("storage\images\camera.png") }} alt="" />
+        <img class=" xl:h-[500px] xl:w-[500px] xl:mr-[100px] lg:mr-[20px] lg:h-[300px] lg:w-[300px] " src={{ asset("storage/images/camera.png") }} alt="" />
         <div class="ml-[200px] lg:ml-[80px]">
 
             <h5 class="text-[#F0B974]  font-bold font-montserrat">Antique Gallery</h5>
-            <h1 class="text-[#F0E9D2] text-[60px] font-bold  font-montserrat lg:text-[45px]">Toko Barang Antik <br> Paling Lengkap</h1>
+            <h1 class="text-[#F0E9D2] xl:text-[60px] font-bold  font-montserrat lg:text-[45px]">Toko Barang Antik <br> Paling Lengkap</h1>
             <p class="text-[#F0E9D2] font-montserrat font-"  >Yuk, temukan harta karun waktu <br>
                 di toko kami, dan temukan barang antik <br>
                 berkualitas</p>
@@ -22,10 +22,10 @@
         
     </div>
     <div class="bg-[#F2F2F2]  h-[100vh] flex justify-center items-center ">
-        <div class="mr-[150px] lg:mr-[30px]">
+        <div class="xl:mr-[150px] lg:mr-[30px]">
             
             <h5 class="text-[#F0B974]  font-bold font-montserrat">Antique Gallery</h5>
-            <h1 class="text-[#393E46] text-[60px] font-bold font-montserrat lg:text-[45px]">Terpercaya di <br>
+            <h1 class="text-[#393E46] xl:text-[60px] font-bold font-montserrat lg:text-[45px]">Terpercaya di <br>
                 Samarinda</h1>
             <p class="text-[#393E46] font-montserrat font-"  >
                 Sejak tahun 1957  toko kami berdiri untuk <br>
@@ -48,7 +48,7 @@
                 
             </div>
             
-            <img class=" ml-[50px] lg:ml-[10px] lg:w-[40%]" src={{ asset("storage/images/tik2.png") }} alt="" />
+            <img class="xl:-[100%] ml-[50px] lg:ml-[10px] lg:w-[40%]" src={{ asset("storage/images/tik2.png") }} alt="" />
     </div>
     
     

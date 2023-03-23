@@ -67,8 +67,7 @@ class MiminController extends Controller
         
     public function admin_dashboard()
     {
-        //mengecek apakah terdapat token pada session
-        //pengecekan bertujuan agar user tidak bisa mengakses showcase sebelum login
+        
         
         if(Session::get('admintkn') == null){
             return to_route('login_admin_form')->with('error','Login terlebih dahulu!!');

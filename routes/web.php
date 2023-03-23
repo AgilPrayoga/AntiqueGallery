@@ -34,6 +34,7 @@ Route::controller(UsersController::class)->group (function()
     Route::get('/signup','sign_up_form')->name('sign_up_form');
     Route::post('/signup','sign_up_action')->name('sign_up_action');
     Route::post('/logout','logout')->name('logout');
+    Route::get('/showcase/{id}','card_detail')->name('card_detail');
     }
 
 );

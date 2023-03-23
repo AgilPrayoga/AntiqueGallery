@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ZwxtlHsWTW0DCgZN',
+            '_route' => 'generated::A5YMnz2Uf2r40ilD',
           ),
           1 => NULL,
           2 => 
@@ -386,7 +386,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LyOZ6WbMhGghFW2C',
+            '_route' => 'generated::KUPaFwjlvyl6bgb7',
           ),
           1 => NULL,
           2 => 
@@ -403,9 +403,43 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
+      0 => '{^(?|/showcase/([^/]++)(*:25))/?$}sDu',
     ),
     3 => 
     array (
+      25 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'card_detail',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => NULL,
+          1 => NULL,
+          2 => NULL,
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => 0,
+        ),
+      ),
     ),
     4 => NULL,
   ),
@@ -557,7 +591,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ZwxtlHsWTW0DCgZN' => 
+    'generated::A5YMnz2Uf2r40ilD' => 
     array (
       'methods' => 
       array (
@@ -580,7 +614,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ZwxtlHsWTW0DCgZN',
+        'as' => 'generated::A5YMnz2Uf2r40ilD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -800,6 +834,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'logout',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'card_detail' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'showcase/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UsersController@card_detail',
+        'controller' => 'App\\Http\\Controllers\\UsersController@card_detail',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'card_detail',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1107,7 +1178,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LyOZ6WbMhGghFW2C' => 
+    'generated::KUPaFwjlvyl6bgb7' => 
     array (
       'methods' => 
       array (
@@ -1129,7 +1200,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::LyOZ6WbMhGghFW2C',
+        'as' => 'generated::KUPaFwjlvyl6bgb7',
       ),
       'fallback' => false,
       'defaults' => 
