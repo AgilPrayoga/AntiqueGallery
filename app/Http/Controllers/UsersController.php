@@ -74,7 +74,8 @@ class UsersController extends Controller
             "email"=>$request->email,
             "Notelp"=>$request->no_telp,
             "password"=>bcrypt($request->password),
-            "admin"=>false
+            "admin"=>false,
+            
 
 
         ]);
@@ -139,24 +140,52 @@ class UsersController extends Controller
             }
     }
     public function edit_profile(Request $request){
-        $edited=$request->validate([
-            'username'=>['required'],
-            'email'=>['required'],
-            'Notelp'=>['required'],
+        $request->validate([
+            'username'=>['nullable'],
+            'email'=>['nullable'],
+            'Notelp'=>['nullable'],
             'password'=>['nullable','confirmed'],
             'password_confirmation'=>['nullable'],
             'alamat'=>['nullable'],
         ]);
-        
-        
+
+
+
+        if($request->password==null){
+            $edit= Users::where('id',$request->id)->update([
+                "username"=>$request->username,
+                "email"=>$request->email,
+                "Notelp"=>$request->Notelp,
+                "alamat"=>$request->alamat,
+                "admin"=>false,
+                
+                
+    
+    
+            ]);
+        }else{
+            $edit= Users::where('id',$request->id)->update([
+            "username"=>$request->username,
+            "email"=>$request->email,
+            "Notelp"=>$request->Notelp,
+            "alamat"=>$request->alamat,
+            "admin"=>false,
+            "password"=>bcrypt($request->password),
             
-        $edit= Users::where('id',$request->id)->update($edited);
+
+
+        ]);
+        }
+        
+
+
+        
         
         if($edit){
-            return to_route('login_form')->with('msg','items berhasil di edit.');
+            return to_route('profile')->with('msg','items berhasil di edit.');
         }
         else{
-            return to_route('login_form')->with('msg','items gagal di edit.');
+            return to_route('profile')->with('msg','items gagal di edit.');
         }
     }
     

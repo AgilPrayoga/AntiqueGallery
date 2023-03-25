@@ -12,11 +12,9 @@
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Email</label>
         <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="Email" name="email" value="{{$users->email}}">
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">No-telp</label>
-        <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="No-Telp" name="Notlep" value="{{$users->Notelp}}">
+        <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="No-Telp" name="Notelp" value="{{$users->Notelp}}">
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Alamat</label>
         <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="Alamat" name="alamat" value="{{$users->alamat}}">
-        <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Password Lama</label>
-        <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="******" name="oldpassword">
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Password Baru</label>
         <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="******" name="password"value="">
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Konfirmasi Password Baru</label>
