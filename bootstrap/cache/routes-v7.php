@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::A5YMnz2Uf2r40ilD',
+            '_route' => 'generated::pghf7xy10FQoidWw',
           ),
           1 => NULL,
           2 => 
@@ -215,6 +215,45 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'logout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/user/profile' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'profile',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/user/profile/edit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'edit_profile',
           ),
           1 => NULL,
           2 => 
@@ -386,7 +425,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::KUPaFwjlvyl6bgb7',
+            '_route' => 'generated::mNuMEHMKJtzUCNHX',
           ),
           1 => NULL,
           2 => 
@@ -591,7 +630,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::A5YMnz2Uf2r40ilD' => 
+    'generated::pghf7xy10FQoidWw' => 
     array (
       'methods' => 
       array (
@@ -614,7 +653,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::A5YMnz2Uf2r40ilD',
+        'as' => 'generated::pghf7xy10FQoidWw',
       ),
       'fallback' => false,
       'defaults' => 
@@ -871,6 +910,79 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'card_detail',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'profile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'user/profile',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UsersController@profile',
+        'controller' => 'App\\Http\\Controllers\\UsersController@profile',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'profile',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'edit_profile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'user/profile/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UsersController@edit_profile',
+        'controller' => 'App\\Http\\Controllers\\UsersController@edit_profile',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'edit_profile',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1178,7 +1290,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::KUPaFwjlvyl6bgb7' => 
+    'generated::mNuMEHMKJtzUCNHX' => 
     array (
       'methods' => 
       array (
@@ -1200,7 +1312,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::KUPaFwjlvyl6bgb7',
+        'as' => 'generated::mNuMEHMKJtzUCNHX',
       ),
       'fallback' => false,
       'defaults' => 

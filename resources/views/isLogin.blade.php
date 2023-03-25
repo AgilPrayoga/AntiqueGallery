@@ -16,27 +16,27 @@
     {{-- endfont --}}
 </head>
 <body>
-    <nav class="z-40 fixed bg-[#2C3333] w-screen xl:h-28 flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2] lg:h-24">
+    <nav class="z-40 fixed bg-[#2C3333] w-screen h-28 xl:h-24  flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
         
         <a class="text-[#F0E9D2] m-[10px] font-bold font-montserrat no-underline" href={{ route('home') }}><h1>LOGO</h1></a>
-        <div class="flex flex-row items-center">
-            
-         
+        <div class="flex justify-row items-center">
             <a class="text-[#F0E9D2] font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>Home</a>
             <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('showcase') }}>Product</a>
-            <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>about</a>
-             <img  class="mr-[100px] w-[30px] h-[30px]" src={{ asset("storage/images/profile.png") }} alt="">
-          
-            
+            <a class="text-[#F0E9D2]  font-thin mr-[100px] no-underline font-montserrat" href={{ route('home') }}>about</a>
+            <a href={{route('profile')}}>
+                <img  class="  mr-[100px] w-[30px] h-[30px]" src={{ asset("storage/images/profile.png") }} alt="">
+            </a>
             <form method="POST" action={{ route('logout') }}>
                 @csrf
                 <input type="hidden" name="token" value={{$db_token}}>
-                <button class="text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
-                focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
+                <button class="text-[#F0E9D2] text-[24px]  bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
+                focus:outline-none focus:ring-yellow-300  rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
                 ">Logout </button>
         
             </form>
         </div>
+        
+       
         
     </nav>
     {{-- content --}}
@@ -73,7 +73,7 @@
         
 
     </footer>
-    <div class="bg-[#eaeaea]" > &copy; DiCOde|Terbaik sejak doeloe.</div>
+    <div class="bg-[#eaeaea]" >&copy; DiCOde|Terbaik sejak doeloe.</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
 </body>

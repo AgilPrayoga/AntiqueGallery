@@ -16,14 +16,16 @@
     {{-- endfont --}}
 </head>
 <body>
-    <nav class="z-40 fixed bg-[#2C3333] w-screen xl:h-28 lg:h-24  flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
+    <nav class="z-40 fixed bg-[#2C3333] w-screen h-28 xl:h-24  flex flex-grid justify-between items-center p-[10px] border-b-2 border-[#F0E9D2]">
         
         <a class="text-[#F0E9D2] m-[10px] font-bold font-montserrat no-underline" href={{ route('home') }}><h1>LOGO</h1></a>
         <div class="flex justify-row items-center">
             <a class="text-[#F0E9D2] font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>Home</a>
             <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('showcase') }}>Product</a>
-            <a class="text-[#F0E9D2]  font-thin mr-[10px] no-underline font-montserrat" href={{ route('home') }}>about</a>
-             <img  class="mr-[100px] w-[30px] h-[30px]" src={{ asset("storage/images/profile.png") }} alt="">
+            <a class="text-[#F0E9D2]  font-thin mr-[100px] no-underline font-montserrat" href={{ route('home') }}>about</a>
+       
+            </div>
+           
         </div>
         
        

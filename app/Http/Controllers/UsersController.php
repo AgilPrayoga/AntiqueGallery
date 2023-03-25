@@ -62,7 +62,7 @@ class UsersController extends Controller
         $request->validate([
             'username'=>['required','unique:Users','max : 30'],
             'email'=>['required'],
-            'no_telp'=>['nullable'],
+            'Notelp'=>['nullable'],
             'admin'=>['require'],
             'password'=>['required','confirmed'],
             'password_confirmation'=>['required',]
@@ -72,7 +72,7 @@ class UsersController extends Controller
         $created = Users::create([
             "username"=>$request->username,
             "email"=>$request->email,
-            "no-telp"=>$request->no_telp,
+            "Notelp"=>$request->no_telp,
             "password"=>bcrypt($request->password),
             "admin"=>false
 
@@ -116,6 +116,47 @@ class UsersController extends Controller
             
             //jika tidak terdapat token balik ke login page
             return redirect()->back()->with('error','Login terlebih dahulu!!');
+        }
+    }
+    public function profile(){
+        
+        if(Session::get('token') == null){
+            return to_route('login_form')->with('error','Login terlebih dahulu!!');
+        }
+        if(Session::has('token')){
+            $users= Users::where('token',Session::get('token'))->first();
+                
+            return view('userProfile',[
+                "users"=>$users,
+                "db_token"=>$users->token,
+                    
+                ]);
+            }
+            else{
+                
+                //jika tidak terdapat token balik ke login page
+                return redirect()->back()->with('error','Login terlebih dahulu!!');
+            }
+    }
+    public function edit_profile(Request $request){
+        $edited=$request->validate([
+            'username'=>['required'],
+            'email'=>['required'],
+            'Notelp'=>['required'],
+            'password'=>['nullable','confirmed'],
+            'password_confirmation'=>['nullable'],
+            'alamat'=>['nullable'],
+        ]);
+        
+        
+            
+        $edit= Users::where('id',$request->id)->update($edited);
+        
+        if($edit){
+            return to_route('login_form')->with('msg','items berhasil di edit.');
+        }
+        else{
+            return to_route('login_form')->with('msg','items gagal di edit.');
         }
     }
     

@@ -19,7 +19,7 @@ class UsersFactory extends Factory
         return [
             'username'=>'admin',
             'email'=>'ariagilprayoga@gmail.com',
-            'no-telp'=>'08225095323',
+            'Notelp'=>'08225095323',
             'password'=>bcrypt('123'),
             'admin'=>1
             

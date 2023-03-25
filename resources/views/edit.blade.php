@@ -5,7 +5,7 @@
     <h1>Edit</h1>
 </div>
 <div class=" bg-[#2C3333]  h-[100vh] flex justify-center items-center ">
-    <form class="drop-shadow-xl z-0 bg-[#D9D9D9] font-montserrat flex rounded-[20px] justify-left items-left flex-col p-[50px] lg:p-[10px]" method="post" enctype="multipart/form-data" action={{ route('edit_action') }}>
+    <form class="drop-shadow-xl z-0 bg-[#D9D9D9] font-montserrat flex rounded-[20px] justify-left items-left flex-col p-[50px] xl:p-[10px]" method="post" enctype="multipart/form-data" action={{ route('edit_action') }}>
             @csrf
             <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Item Name</label>
             <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="itemname" name="itemname" value="{{$items->itemname}}">

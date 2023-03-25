@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('email');
-            $table->string('No-telp')->nullable();
+            $table->string('Notelp')->nullable();
             $table->string('password');
             $table->string('token')->nullable();
+            $table->string('alamat')->nullable();
             $table->string('admintkn')->nullable();
             $table->boolean('admin')->default(0);
             $table->timestamps();

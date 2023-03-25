@@ -11,8 +11,8 @@
         <form method="POST" action="">
             @csrf
             <input type="hidden" name="token" value={{$db_token}}>
-            <button class="text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
-            focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
+            <button class="text-[#F0E9D2] text-[24px] bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
+            focus:outline-none focus:ring-yellow-300  rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
             ">Pesan </button>
     
         </form>
