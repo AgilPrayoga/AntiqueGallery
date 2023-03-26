@@ -19,15 +19,18 @@
         <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="******" name="password"value="">
         <label class="m-[5px] text-[#2C3333] text-[18px] font-bold" for="">Konfirmasi Password Baru</label>
         <input class="m-[5px] p-[5px] rounded-lg drop-shadow-xl" type="text" placeholder="******" name="password_confirmation"value="">
-
+        
         <i>{{session()->get('msg')}}</i>
-
+        @if ($errors->has('username'))
+        <span class="rounded-[5px] m-[10px] bg-[#B46060] text-[#333] text-center">{{ $errors->first('pasword confirmation') }}</span>
+        @endif
+        
         <button class="m-[5px] text-[#F0E9D2] text-[24px] font-bold bg-[#393E46] font-montserrat   hover:text-black border hover:bg-[#F0E9D2] 
         focus:ring-yellow-300  rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 
         " type="submit">Edit</button>
-    
-    
+        
+        
     </form>
 </div>
-    
+
 @endsection

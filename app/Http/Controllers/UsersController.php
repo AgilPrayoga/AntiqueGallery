@@ -13,52 +13,56 @@ use Illuminate\Support\Str;
 class UsersController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
+    * Display a listing of the resource.
+    */
     public function login_form()
     {
         return view('login');
     }
-
+    
     public function login_action(Request $request)
     {
         
         
-       $users = Users::where('username',$request->username)->first();
-        if($users == null){
-           
-            return redirect()->back()->with('error','username/password salah!');
-        }
+        $users = Users::where('username',$request->username)->first();
         
+        if($users == null){
+            
+            return redirect()->back()->with('msg','Masukan akun Anda terlebih dahulu!');
+        }
         
         $db_password=$users->password;
         $hashed_password =Hash::check($request->password,$db_password);
         
-
+        
         if ($hashed_password){
             
-           
+            
             $users->token =Str::random(20);
             $users->save();
-
+            
             $request->session()->put('token',$users->token);
             
-
-           
+            
+            
             return to_route('showcase');
         }else{
             
-            return redirect()->back()->with('error','Username atau password tidak di temukan!');
+            return redirect()->back()->with('err','Username atau password tidak di temukan!');
         }
         
+        
     }
-
+    
     public function sign_up_form()
     {
         return view('signup');
     }
-
+    
     public function sign_up_action(Request $request){
+        
+        
+        
         $request->validate([
             'username'=>['required','unique:Users','max : 30'],
             'email'=>['required'],
@@ -67,8 +71,7 @@ class UsersController extends Controller
             'password'=>['required','confirmed'],
             'password_confirmation'=>['required',]
         ]);
-        
-        
+
         $created = Users::create([
             "username"=>$request->username,
             "email"=>$request->email,
@@ -76,15 +79,22 @@ class UsersController extends Controller
             "password"=>bcrypt($request->password),
             "admin"=>false,
             
-
-
+            
+            
         ]);
+        
+        
+        
         if($created){
-            return to_route('login_form')->with('msg','akun berhasil di buat.');
+            
+            return to_route('login_form')->with('msg','akun Anda berhasil di buat.');
         }
         else{
-            return view('signup')->with('msg','akun gagal di buat.!!');
+            return dd($request);
+            // return to_route('login_form')->with('err','akun gagal di buat.!!');
+            
         }
+        
     }
     public function logout(Request $request)
     {
@@ -95,7 +105,7 @@ class UsersController extends Controller
         
         Session::pull('token','admintkn');
         
-        return to_route('login_form')->with('msg','anda telah logout');
+        return to_route('login_form')->with('msg','Anda telah logout');
         
     }
     public function card_detail($id){
@@ -126,31 +136,31 @@ class UsersController extends Controller
         }
         if(Session::has('token')){
             $users= Users::where('token',Session::get('token'))->first();
-                
+            
             return view('userProfile',[
                 "users"=>$users,
                 "db_token"=>$users->token,
-                    
-                ]);
-            }
-            else{
                 
-                //jika tidak terdapat token balik ke login page
-                return redirect()->back()->with('error','Login terlebih dahulu!!');
-            }
+            ]);
+        }
+        else{
+            
+            //jika tidak terdapat token balik ke login page
+            return redirect()->back()->with('error','Login terlebih dahulu!!');
+        }
     }
     public function edit_profile(Request $request){
         $request->validate([
-            'username'=>['nullable'],
-            'email'=>['nullable'],
+            'username'=>['required'],
+            'email'=>['required'],
             'Notelp'=>['nullable'],
             'password'=>['nullable','confirmed'],
-            'password_confirmation'=>['nullable'],
+            'password_confirmation'=>['required'],
             'alamat'=>['nullable'],
         ]);
-
-
-
+        
+        
+        
         if($request->password==null){
             $edit= Users::where('id',$request->id)->update([
                 "username"=>$request->username,
@@ -160,25 +170,25 @@ class UsersController extends Controller
                 "admin"=>false,
                 
                 
-    
-    
+                
+                
             ]);
         }else{
             $edit= Users::where('id',$request->id)->update([
-            "username"=>$request->username,
-            "email"=>$request->email,
-            "Notelp"=>$request->Notelp,
-            "alamat"=>$request->alamat,
-            "admin"=>false,
-            "password"=>bcrypt($request->password),
-            
-
-
-        ]);
+                "username"=>$request->username,
+                "email"=>$request->email,
+                "Notelp"=>$request->Notelp,
+                "alamat"=>$request->alamat,
+                "admin"=>false,
+                "password"=>bcrypt($request->password),
+                
+                
+                
+            ]);
         }
         
-
-
+        
+        
         
         
         if($edit){
